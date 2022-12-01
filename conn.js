@@ -1,11 +1,20 @@
 const mongoose=require('mongoose');
-const DB=process.env.DATABASE;
-mongoose.connect(DB,{
+const DB=module.exports=()=>{
+
+
+const connectionParams={
     useNewUrlParser:true,   
-    useCreateIndex:true,
+    
     useUnifiedTopology:true,
-    useFindAndModify:false
-}).then(()=>{
-console.log(`sucessful`)
-}).catch((e)=>
-console.log('no connection'));
+}
+try{
+mongoose.connect('mongodb+srv://priya:kanagapriyaclarit@cluster0.obudofj.mongodb.net/mernstack?retryWrites=true&w=majority');
+console.log(`sucessful`);
+}
+catch(e){
+
+
+console.log('no connection');
+}
+}
+DB();
