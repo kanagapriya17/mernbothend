@@ -1,20 +1,16 @@
 const mongoose=require('mongoose');
-const DB=module.exports=()=>{
 
+const dburl='mongodb+srv://priya:kanagapriyaclarit@cluster0.obudofj.mongodb.net/mernstack?retryWrites=true&w=majority';
 
 const connectionParams={
     useNewUrlParser:true,   
     
     useUnifiedTopology:true,
 }
-try{
-mongoose.connect('mongodb+srv://priya:kanagapriyaclarit@cluster0.obudofj.mongodb.net/mernstack?retryWrites=true&w=majority');
+
+mongoose.connect(dburl,connectionParams).then(()=>{
 console.log(`sucessful`);
-}
-catch(e){
-
-
+}).catch((e)=>{
 console.log('no connection');
-}
-}
-DB();
+})
+
