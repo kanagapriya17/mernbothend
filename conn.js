@@ -1,6 +1,5 @@
 const mongoose=require('mongoose');
-
-const dburl='mongodb+srv://velangudi:priya17@cluster0.obudofj.mongodb.net/kottaiyur?retryWrites=true&w=majority';
+const dburl='mongodb+srv://velangudi:priya17@cluster0.bvw7mey.mongodb.net/kottaiyur?retryWrites=true&w=majority';
 
 const connectionParams={
     useNewUrlParser:true,   
